@@ -28,5 +28,17 @@ class TestlogController extends Controllers
       echo $output;
     }
   }
+
+  public function loginAction()
+  {
+    $user = NewUser::authenticate($_POST['email'], $_POST['password']);
+
+    if ($user) {
+      header('Location: http://' . $_SERVER['HTTP_HOST'] . '/testlog', true, 303);
+      exit;
+    } else {
+      $this->view->render('views/forms.php');
+    }
+  }
 }
 ?>

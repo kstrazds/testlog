@@ -18,6 +18,7 @@ $(function (){
         var temp = '<li class="message">' + element + '</li>';
         
         $('.messages-list').prepend(temp);
+        $('.signup-form input').val('');
       });
     }).fail(function () {
       alert('Something went wrong, please try again later.');

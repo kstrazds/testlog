@@ -19,23 +19,49 @@
             <h3 class="title">Sign Up</h3>
           </div>
         </div>
+
         <div class="messages-container">
           <ul class="messages-list"></ul>
         </div>
-        <form method="post">
+
+        <form method="post" class="signup-form">
           <div class="input-data name">
             <label for="inputName">Name<span class="required">*</span></label>
-            <input name="name" id="inputName" autocomplete="off">
+            <input name="name" required id="inputName" autocomplete="off">
           </div>
           <div class="input-data email">
             <label for="inputEmail">Email<span class="required">*</span></label>
-            <input name="email" id="inputEmail" autocomplete="off">
+            <input type="email" required name="email" id="inputEmail" autocomplete="off">
           </div>
           <div class="input-data password">
             <label for="inputPassword">Password<span class="required">*</span></label>
-            <input type="password" name="password" id="inputPassword" autocomplete="off">
+            <input type="password" required name="password" id="inputPassword" autocomplete="off">
           </div>
           <button id="signup-btn" type="submit">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="form">
+        <div class="form-heading-container">
+          <div class="heading-label">
+            <h3 class="title">Login</h3>
+          </div>
+        </div>
+
+        <div class="messages-container">
+          <ul class="messages-list"></ul>
+        </div>
+
+        <form action="login" method="post" class="login-form">
+          <div class="input-data email">
+            <label for="inputEmail">Email<span class="required">*</span></label>
+            <input type="email" required name="email" id="inputEmail" autocomplete="off">
+          </div>
+          <div class="input-data password">
+            <label for="inputPassword">Password<span class="required">*</span></label>
+            <input type="password" required name="password" id="inputPassword" autocomplete="off">
+          </div>
+          <button id="login-btn" type="submit">Login</button>
         </form>
       </div>
     </div>
