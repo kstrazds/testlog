@@ -1,23 +1,20 @@
 <?php
 namespace models;
 
-class DatabaseConnection 
+use PDO;
+use models\DatabaseConfig;
+
+abstract class DatabaseConnection
 {
-
-    private $servername;
-    private $username;
-    private $password;
-    private $dbname;
-
-    public function connect() 
+    protected static function getDB()
     {
-        $this->servername = "localhost";
-        $this->username = "root";
-        $this->password = "";
-        $this->dbname = "loginregister";
+        static $db = null;
 
-        $conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
-        $conn->set_charset("utf8");
-        return $conn;
+        if ($db === null) {
+            $dsn = 'mysql:host=' . DatabaseConfig::DB_HOST . ';dbname=' . DatabaseConfig::DB_NAME . ';charset=utf8';
+            $db = new PDO($dsn, DatabaseConfig::DB_USER, DatabaseConfig::DB_PASSWORD);
+        }
+
+        return $db;
     }
 }

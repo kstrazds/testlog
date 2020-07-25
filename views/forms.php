@@ -1,8 +1,45 @@
 <html>
 <?php require_once('layouts/_head.php'); ?>
 <body>
-<div id="block">
-    smth
+<div class="main">
+  <div class="container">
+    <div class="forms-background-wrapper">
+      <div class="signup-section-info">
+
+      </div>
+      <div class="login-section-info">
+
+      </div>
+    </div>
+
+    <div class="forms-wrapper">
+      <div class="form">
+        <div class="form-heading-container">
+          <div class="heading-label">
+            <h3 class="title">Sign Up</h3>
+          </div>
+        </div>
+        <div class="messages-container">
+          <ul class="messages-list"></ul>
+        </div>
+        <form method="post">
+          <div class="input-data name">
+            <label for="inputName">Name<span class="required">*</span></label>
+            <input name="name" id="inputName" autocomplete="off">
+          </div>
+          <div class="input-data email">
+            <label for="inputEmail">Email<span class="required">*</span></label>
+            <input name="email" id="inputEmail" autocomplete="off">
+          </div>
+          <div class="input-data password">
+            <label for="inputPassword">Password<span class="required">*</span></label>
+            <input type="password" name="password" id="inputPassword" autocomplete="off">
+          </div>
+          <button id="signup-btn" type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
