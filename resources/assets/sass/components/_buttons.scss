@@ -1,0 +1,42 @@
+.btn {
+  &.orange,
+  &.blue {
+    border: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    background-color: $color--orange;
+    border-radius: 24px;
+    padding: 8px 0;
+    color: $color--white;
+    font-weight: $font-weight--normal;
+  }
+
+  &.blue {
+    background-color: $color--blue-light;
+  }
+
+  &.forgot,
+  &.signup-mobile,
+  &.login-mobile {
+    display: inline-block;
+    text-align: center;
+    margin: 16px 0;
+    text-decoration: none;
+    color: $color--gray;
+    font-weight: $font-weight--normal;
+    font-size: 12px;
+    float: right;
+  }
+
+  &.login-mobile {
+    display: block;
+    float: inherit;
+  }
+
+  &.signup-mobile {
+    float: left;
+  }
+}

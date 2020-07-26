@@ -1,0 +1,14 @@
+html,
+body,
+form {
+  margin: 0;
+  padding: 0;
+  font-family: $font-source-pro;
+}
+
+body {
+  background-image: url('../images/magebit-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

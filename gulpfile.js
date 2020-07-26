@@ -4,16 +4,16 @@ var gulp = require('gulp'),
     rename = require('gulp-rename');
 
 gulp.task('sass', function(){
-    return gulp.src('src/assets/sass/style.scss')
+    return gulp.src('resources/assets/sass/main.scss')
         .pipe(sass())
-        .pipe(gulp.dest('src/assets/css'))
+        .pipe(gulp.dest('resources/assets/css'))
 });
 
 gulp.task('minicss', function(){
-    return gulp.src('src/assets/css/style.css')
+    return gulp.src('resources/assets/css/main.css')
         .pipe(cssnano())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('src/assets/css'))
+        .pipe(gulp.dest('resources/assets/css'))
 });

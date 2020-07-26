@@ -11,15 +11,21 @@ $(function (){
           password: $('#inputPassword').val()
       }
     }).done(function (data) {
+      $('.messages-container').css('display', 'none');
       $('.messages-list').empty();
       var dataObj = $.parseJSON(data);
 
-      dataObj.forEach(function(element) {
-        var temp = '<li class="message">' + element + '</li>';
-        
-        $('.messages-list').prepend(temp);
-        $('.signup-form input').val('');
-      });
+      if (dataObj.length) {
+        $('.messages-container').css('display', 'block');
+
+        dataObj.forEach(function(element) {
+          var temp = '<li class="message">' + element + '</li>';
+          
+          $('.messages-list').prepend(temp);
+          $('.signup-form input').val('');
+        });
+      }
+      
     }).fail(function () {
       alert('Something went wrong, please try again later.');
     });

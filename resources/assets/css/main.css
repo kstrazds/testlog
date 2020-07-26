@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../../fonts/SourceSansPro-Regular.ttf");
+  src: url("../../fonts/sourcesanspro-regular-webfont.woff") format("woff"); }
+
+html,
+body,
+form {
+  margin: 0;
+  padding: 0;
+  font-family: "SourceSansPro", sans-serif; }
+
+body {
+  background-image: url("../images/magebit-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.heading-label h3 {
+  letter-spacing: 1;
+  padding: 16px 0;
+  font-weight: 300;
+  margin: 0; }
+
+.container {
+  display: block;
+  height: 320px;
+  width: 266px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .container .forms-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 35, 71, 0.9); }
+    .container .forms-wrapper .form {
+      position: absolute;
+      margin: 0px 24px;
+      height: 320px;
+      background: white;
+      top: -24px;
+      background-color: #fff;
+      padding: 24px;
+      box-shadow: -24px 0px 0px -12px rgba(73, 171, 254, 0.2); }
+      .container .forms-wrapper .form.signup {
+        display: none; }
+      .container .forms-wrapper .form input:-webkit-autofill,
+      .container .forms-wrapper .form input:-webkit-autofill:hover,
+      .container .forms-wrapper .form input:-webkit-autofill:focus,
+      .container .forms-wrapper .form input:-webkit-autofill:active {
+        box-shadow: 0 0 0 30px #fff inset; }
+      .container .forms-wrapper .form .input-data {
+        margin-bottom: 16px; }
+        .container .forms-wrapper .form .input-data label {
+          font-size: 14px;
+          display: block;
+          font-weight: 600;
+          color: #3e495e; }
+          .container .forms-wrapper .form .input-data label .required {
+            color: #f44368; }
+        .container .forms-wrapper .form .input-data input {
+          background-color: #fff;
+          border: none;
+          border-bottom: 1px solid #8495b7;
+          outline: 0;
+          padding: 8px 0;
+          font-size: 14px; }
+
+.messages-container {
+  background: #fff;
+  padding: 24px;
+  color: #f44368;
+  display: none; }
+  .messages-container .messages-list {
+    font-size: 14px;
+    margin: 0;
+    padding: 0 0 0 24px; }
+
+.btn.orange, .btn.blue {
+  border: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  background-color: #f89a35;
+  border-radius: 24px;
+  padding: 8px 0;
+  color: #fff;
+  font-weight: 600; }
+
+.btn.blue {
+  background-color: #49abfe; }
+
+.btn.forgot, .btn.signup-mobile, .btn.login-mobile {
+  display: inline-block;
+  text-align: center;
+  margin: 16px 0;
+  text-decoration: none;
+  color: #3e495e;
+  font-weight: 600;
+  font-size: 12px;
+  float: right; }
+
+.btn.login-mobile {
+  display: block;
+  float: inherit; }
+
+.btn.signup-mobile {
+  float: left; }

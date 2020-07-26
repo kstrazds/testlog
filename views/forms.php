@@ -2,6 +2,9 @@
 <?php require_once('layouts/_head.php'); ?>
 <body>
 <div class="main">
+  <div class="messages-container">
+    <ul class="messages-list"></ul>
+  </div>
   <div class="container">
     <div class="forms-background-wrapper">
       <div class="signup-section-info">
@@ -13,15 +16,11 @@
     </div>
 
     <div class="forms-wrapper">
-      <div class="form">
+      <div class="form signup">
         <div class="form-heading-container">
           <div class="heading-label">
             <h3 class="title">Sign Up</h3>
           </div>
-        </div>
-
-        <div class="messages-container">
-          <ul class="messages-list"></ul>
         </div>
 
         <form method="post" class="signup-form">
@@ -37,11 +36,15 @@
             <label for="inputPassword">Password<span class="required">*</span></label>
             <input type="password" required name="password" id="inputPassword" autocomplete="off">
           </div>
-          <button id="signup-btn" type="submit">Sign Up</button>
+          <button class="btn blue" id="signup-btn" type="submit">Sign Up</button>
+          <a class="btn login-mobile" id="login-mobile" href="#">Login</a>
         </form>
       </div>
 
-      <div class="form">
+      <div class="form login">
+
+        <div class="form-blue-bg"></div>
+        
         <div class="form-heading-container">
           <div class="heading-label">
             <h3 class="title">Login</h3>
@@ -61,9 +64,10 @@
             <label for="loginPassword">Password<span class="required">*</span></label>
             <input type="password" required name="password" id="loginPassword" autocomplete="off">
           </div>
-          <button id="login-btn" type="submit">Login</button>
+          <button class="btn orange" id="login-btn" type="submit">Login</button>
+          <a class="btn forgot" id="password-reset-btn" href="/testlog/resetPage">Forgot?</a>
+          <a class="btn signup-mobile" id="signup-mobile" href="#">Sign Up</a>
         </form>
-        <a id="password-reset-btn" href="/testlog/resetPage">Forgot?</a>
       </div>
     </div>
   </div>

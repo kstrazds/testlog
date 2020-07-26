@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../../fonts/SourceSansPro-Regular.ttf");
+  src: url("../../fonts/sourcesanspro-regular-webfont.woff") format("woff");
+}
+
+$font-source-pro: 'SourceSansPro', sans-serif;
+
+$font-weight--light: 300;
+$font-weight--normal: 600;
+$font-weight--bold: 900;
