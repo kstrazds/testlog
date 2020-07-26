@@ -2,6 +2,8 @@
 
 namespace classes;
 
+use models\NewUser;
+
 class Auth
 {
   public static function login($user)
@@ -30,6 +32,13 @@ class Auth
   public static function isLoggedIn()
   {
     return isset($_SESSION['user_id']);
+  }
+
+  public function getUser()
+  {
+    if (isset($_SESSION['user_id'])) {
+      return NewUser::findById($_SESSION['user_id']);
+    }
   }
 }
 

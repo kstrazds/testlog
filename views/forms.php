@@ -63,6 +63,7 @@
           </div>
           <button id="login-btn" type="submit">Login</button>
         </form>
+        <a id="password-reset-btn" href="/testlog/resetPage">Forgot?</a>
       </div>
     </div>
   </div>

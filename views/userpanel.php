@@ -1,15 +1,17 @@
 <html>
 <?php require_once('layouts/_head.php'); ?>
 <body>
-  <h3>Welcome!</h3>
+  <?php 
+    $isLoggedIn = classes\Auth::isLoggedIn();
+    $loggedUser = classes\Auth::getUser();
+  ?>
+  <h3>Welcome <?php echo $loggedUser->name; ?>!</h3>
 
   <?php 
-  $isLoggedIn = classes\Auth::isLoggedIn();
+    if ($isLoggedIn): ?>
+      You are logged in!
 
-  if ($isLoggedIn): ?>
-    You are logged in!
-
-    <a href="/testlog" id="logout" class="logout">Logout</a>
-  <?php endif; ?>
+      <a href="/testlog" id="logout" class="logout">Logout</a>
+    <?php endif; ?>
 </body>
 </html>

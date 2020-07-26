@@ -55,5 +55,54 @@ class TestlogController extends Controllers
     header('Location: http://' . $_SERVER['HTTP_HOST'] . '/testlog', true, 303);
     exit;
   }
+
+  public function resetPageAction()
+  {
+    $this->view->render('views/forgot.php');
+  }
+
+  public function requestResetAction()
+  {
+    NewUser::sendPasswordReset($_POST['email']);
+    header('Location: http://' . $_SERVER['HTTP_HOST'] . '/testlog', true, 303);
+    exit;
+  }
+
+  public function resetAction()
+  {
+    $url = $_SERVER['REQUEST_URI'];
+
+    $getUrlArray = explode('/testlog/reset/', $url);
+    $getUrlHash = implode($getUrlArray);
+
+    $user = $this->getUserOrExit($getUrlHash);
+
+    $this->view->render('views/reset.php');
+  }
+
+  public function resetPasswordAction()
+  {
+    $token = $_POST['token'];
+
+    $user = $this->getUserOrExit($token);
+
+    if ($user->resetPassword($_POST['password'])) {
+      $this->view->render('views/forms.php');
+    } else {
+      echo "Reset was not denied";
+    }
+  }
+
+  protected function getUserOrExit($token)
+  {
+    $user = NewUser::findByPasswordReset($token);
+
+    if ($user) {
+      return $user;
+    } else {
+      echo 'Password reset token invalid!';
+      exit;
+    }
+  }
 }
 ?>

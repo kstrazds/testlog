@@ -30,8 +30,25 @@ $(function (){
       type: "POST",
       url: "destroySession",
       data: {}
-    }).done(function (data) {
+    }).done(function () {
       console.log('Logged out!');
+    }).fail(function () {
+      alert('Something went wrong, please try again later.');
+    });
+  });
+
+  $('body').on('click', '#forgottenPassword', function() {
+    $.ajax({ 
+      type: "POST",
+      url: "requestReset",
+      data: {
+        email: $('#forgottenPassword').val()
+      }
+    }).done(function (data) {
+      $('.reset-password').css('display', 'none');
+
+      var approved = 'Please check your email!';
+      $('.message-box').append(approved);
     }).fail(function () {
       alert('Something went wrong, please try again later.');
     });
