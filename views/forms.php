@@ -49,17 +49,17 @@
         </div>
 
         <div class="messages-container">
-          <ul class="messages-list"></ul>
+          <ul class="login-messages"></ul>
         </div>
 
         <form action="login" method="post" class="login-form">
           <div class="input-data email">
-            <label for="inputEmail">Email<span class="required">*</span></label>
-            <input type="email" required name="email" id="inputEmail" autocomplete="off">
+            <label for="loginEmail">Email<span class="required">*</span></label>
+            <input type="email" required name="email" id="loginEmail" autocomplete="off">
           </div>
           <div class="input-data password">
-            <label for="inputPassword">Password<span class="required">*</span></label>
-            <input type="password" required name="password" id="inputPassword" autocomplete="off">
+            <label for="loginPassword">Password<span class="required">*</span></label>
+            <input type="password" required name="password" id="loginPassword" autocomplete="off">
           </div>
           <button id="login-btn" type="submit">Login</button>
         </form>

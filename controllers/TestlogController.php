@@ -2,6 +2,7 @@
 
 use models\NewUser;
 use libs\Controllers;
+use classes\Auth;
 
 class TestlogController extends Controllers
 {
@@ -31,14 +32,28 @@ class TestlogController extends Controllers
 
   public function loginAction()
   {
-    $user = NewUser::authenticate($_POST['email'], $_POST['password']);
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+      $user = NewUser::authenticate($_POST['email'], $_POST['password']);
 
-    if ($user) {
+      if ($user) {
+        Auth::login($user);
+
+        $this->view->render('views/userpanel.php');
+      } else {
+        $this->view->render('views/forms.php');
+      }
+    } else {
       header('Location: http://' . $_SERVER['HTTP_HOST'] . '/testlog', true, 303);
       exit;
-    } else {
-      $this->view->render('views/forms.php');
     }
+  }
+
+  public function destroySessionAction()
+  {
+    Auth::logout();
+
+    header('Location: http://' . $_SERVER['HTTP_HOST'] . '/testlog', true, 303);
+    exit;
   }
 }
 ?>

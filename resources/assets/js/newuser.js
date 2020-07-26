@@ -1,5 +1,5 @@
 $(function (){
-  $('body').on('click', '#signup-btn', function (e){
+  $('body').on('click', '#signup-btn', function (e) {
     e.preventDefault();
 
     $.ajax({ 
@@ -23,5 +23,17 @@ $(function (){
     }).fail(function () {
       alert('Something went wrong, please try again later.');
     });
-  })
+  });
+
+  $(document).on('click', '#logout', function() {
+    $.ajax({ 
+      type: "POST",
+      url: "destroySession",
+      data: {}
+    }).done(function (data) {
+      console.log('Logged out!');
+    }).fail(function () {
+      alert('Something went wrong, please try again later.');
+    });
+  });
 });
