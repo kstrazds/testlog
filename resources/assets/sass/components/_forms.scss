@@ -109,13 +109,33 @@
         &.email::after,
         &.password::after,
         &.name::after {
-          content: url('../images/ic-lock.png');
+          content: url('../images/ic_lock.png');
           display: block;
           position: absolute;
-          width: 24px;
-          height: 24px;
+          width: 16px;
+          height: 16px;
           right: 0;
           top: 16px;
+        }
+
+        &.email::after {
+          content: url('../images/ic_mail.png');
+        }
+
+        &.name::after {
+          content: url('../images/ic_user.png');
+        }
+
+        &.email.active::after {
+          content: url('../images/ic_mail1.png');
+        }
+
+        &.password.active::after {
+          content: url('../images/ic_lock1.png');
+        }
+
+        &.name.active::after {
+          content: url('../images/ic_user1.png');
         }
       }
     }
@@ -132,5 +152,105 @@
     font-size: 14px;
     margin: 0;
     padding: 0 0 0 24px;
+  }
+}
+
+.forms-background-wrapper {
+  display: none;
+}
+
+@include desktop {
+  .forms-background-wrapper {
+    display: block;
+    position: absolute;
+    color: white;
+    z-index: 1;
+  }
+
+  .container {
+    width: 900px;
+    height: 400px;
+
+    .signup-section-info,
+    .login-section-info {
+      width: 50%;
+      display: inline-block;
+      float: left;
+      height: 400px;
+
+      .section {
+        margin: 56px 109px 0 56px;
+
+        h3 {
+          font-size: 24px;
+          font-weight: $font-weight--light;
+          margin: 0 0 24px 0;
+          padding: 0 0 24px 0;
+          position: relative;
+
+          &::after {
+            content: '';
+            height: 2px;
+            background-color: $color--blue-light;
+            width: 48px;
+            position: absolute;
+            display: block;
+            bottom: 0;
+          }
+        }
+
+        p {
+          line-height: 32px;
+          font-weight: $font-weight--normal;
+          font-size: 15px;
+          margin: 0 0 24px 0;
+        }
+      }
+    }
+
+    .login-section-info {
+      float: right;
+
+      .section {
+        margin: 56px 56px 0 109px;
+      }
+    }
+
+    .forms-wrapper .form {
+      width: 351px;
+      height: 256px;
+      float: right;
+      padding: 96px 64px;
+      transition: 0.5s;
+      z-index: 1;
+
+      .inner-element {
+        width: 351px;
+
+        .input-data {
+          margin-bottom: 24px;
+
+          input {
+            width: 100%;
+          }
+
+          label {
+            color: $color--gray-regular;
+          }
+        }
+      }
+
+      &.forgot {
+        float: inherit;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .heading-label h3 {
+    font-size: 24px;
+    margin: 0 0 24px 0;
+    padding: 0 0 24px 0;
+    color: $color--gray;
   }
 }

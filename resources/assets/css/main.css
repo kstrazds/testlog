@@ -100,13 +100,23 @@ body {
           padding: 8px 0;
           font-size: 14px; }
         .container .forms-wrapper .form .input-data.email::after, .container .forms-wrapper .form .input-data.password::after, .container .forms-wrapper .form .input-data.name::after {
-          content: url("../images/ic-lock.png");
+          content: url("../images/ic_lock.png");
           display: block;
           position: absolute;
-          width: 24px;
-          height: 24px;
+          width: 16px;
+          height: 16px;
           right: 0;
           top: 16px; }
+        .container .forms-wrapper .form .input-data.email::after {
+          content: url("../images/ic_mail.png"); }
+        .container .forms-wrapper .form .input-data.name::after {
+          content: url("../images/ic_user.png"); }
+        .container .forms-wrapper .form .input-data.email.active::after {
+          content: url("../images/ic_mail1.png"); }
+        .container .forms-wrapper .form .input-data.password.active::after {
+          content: url("../images/ic_lock1.png"); }
+        .container .forms-wrapper .form .input-data.name.active::after {
+          content: url("../images/ic_user1.png"); }
 
 .messages-container {
   background: #fff;
@@ -117,6 +127,77 @@ body {
     font-size: 14px;
     margin: 0;
     padding: 0 0 0 24px; }
+
+.forms-background-wrapper {
+  display: none; }
+
+@media (min-width: 991px) {
+  .forms-background-wrapper {
+    display: block;
+    position: absolute;
+    color: white;
+    z-index: 1; }
+  .container {
+    width: 900px;
+    height: 400px; }
+    .container .signup-section-info,
+    .container .login-section-info {
+      width: 50%;
+      display: inline-block;
+      float: left;
+      height: 400px; }
+      .container .signup-section-info .section,
+      .container .login-section-info .section {
+        margin: 56px 109px 0 56px; }
+        .container .signup-section-info .section h3,
+        .container .login-section-info .section h3 {
+          font-size: 24px;
+          font-weight: 300;
+          margin: 0 0 24px 0;
+          padding: 0 0 24px 0;
+          position: relative; }
+          .container .signup-section-info .section h3::after,
+          .container .login-section-info .section h3::after {
+            content: '';
+            height: 2px;
+            background-color: #49abfe;
+            width: 48px;
+            position: absolute;
+            display: block;
+            bottom: 0; }
+        .container .signup-section-info .section p,
+        .container .login-section-info .section p {
+          line-height: 32px;
+          font-weight: 600;
+          font-size: 15px;
+          margin: 0 0 24px 0; }
+    .container .login-section-info {
+      float: right; }
+      .container .login-section-info .section {
+        margin: 56px 56px 0 109px; }
+    .container .forms-wrapper .form {
+      width: 351px;
+      height: 256px;
+      float: right;
+      padding: 96px 64px;
+      transition: 0.5s;
+      z-index: 1; }
+      .container .forms-wrapper .form .inner-element {
+        width: 351px; }
+        .container .forms-wrapper .form .inner-element .input-data {
+          margin-bottom: 24px; }
+          .container .forms-wrapper .form .inner-element .input-data input {
+            width: 100%; }
+          .container .forms-wrapper .form .inner-element .input-data label {
+            color: #8495b7; }
+      .container .forms-wrapper .form.forgot {
+        float: inherit;
+        margin: 0 auto; }
+  .heading-label h3 {
+    font-size: 24px;
+    margin: 0 0 24px 0;
+    padding: 0 0 24px 0;
+    color: #3e495e; } }
 
 .btn.orange, .btn.blue {
   border: 0;
@@ -131,7 +212,28 @@ body {
   color: #fff;
   font-weight: 600;
   letter-spacing: 1;
-  outline: 0; }
+  outline: 0;
+  cursor: pointer; }
+
+.btn.lead, .btn.lead-back {
+  background-color: transparent;
+  border: 2px solid #49abfe;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 140px;
+  padding: 16px 0;
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 1;
+  transition: 0.3s; }
+  .btn.lead:hover, .btn.lead-back:hover {
+    background-color: #49abfe;
+    transition: 0.3s; }
 
 .btn.blue {
   background-color: #49abfe; }
@@ -152,3 +254,21 @@ body {
 
 .btn.signup-mobile {
   float: left; }
+
+@media (min-width: 991px) {
+  .btn.signup-mobile, .btn.login-mobile {
+    display: none; }
+  .btn.orange, .btn.blue {
+    display: inline-block;
+    padding: 16px 0;
+    width: 140px;
+    transition: 0.3s; }
+  .btn.orange:hover {
+    background-color: #f8Bf35;
+    transition: 0.3s; }
+  .btn.forgot {
+    font-size: 16px; }
+  .btn.back-login {
+    display: inline-block;
+    float: right;
+    font-size: 16px; } }

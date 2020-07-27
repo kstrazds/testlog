@@ -14,6 +14,31 @@
     font-weight: $font-weight--normal;
     letter-spacing: 1;
     outline: 0;
+    cursor: pointer;
+  }
+
+  &.lead,
+  &.lead-back {
+    background-color: transparent;
+    border: 2px solid $color--blue-light;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 24px;
+    font-weight: $font-weight--normal;
+    cursor: pointer;
+    width: 140px;
+    padding: 16px 0;
+    display: inline-block;
+    color: $color--white;
+    letter-spacing: 1;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $color--blue-light;
+      transition: 0.3s;
+    }
   }
 
   &.blue {
@@ -42,5 +67,37 @@
 
   &.signup-mobile {
     float: left;
+  }
+}
+
+@include desktop {
+  .btn {
+    &.signup-mobile,
+    &.login-mobile {
+      display: none;
+    }
+
+    &.orange,
+    &.blue {
+      display: inline-block;
+      padding: 16px 0;
+      width: 140px;
+      transition: 0.3s;
+    }
+
+    &.orange:hover {
+      background-color: $color--orange-light;
+      transition: 0.3s;
+    }
+
+    &.forgot {
+      font-size: 16px;
+    }
+
+    &.back-login {
+      display: inline-block;
+      float: right;
+      font-size: 16px;
+    }
   }
 }

@@ -13,7 +13,7 @@ class Mail
 
     // Now, compose and send your message.
     // $mg->messages()->send($domain, $params);
-    $mg->messages()->send('sandbox098d848369ab4c59922a022beafc4065.mailgun.org', [
+    $mg->messages()->send('test.testlog.tk', [
       'from'    => 'recover@testlog.com',
       'to'      => $to,
       'subject' => $subject,
