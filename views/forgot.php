@@ -16,7 +16,7 @@
           <form method="post" action="requestReset" class="reset-password">
             <div class="input-data email">
               <label for="forgottenEmail">Email<span class="required">*</span></label>
-              <input type="email" id="forgottenEmail" name="email" required autofocus>
+              <input type="email" id="forgottenEmail" name="email" required>
             </div>
 
             <button class="btn blue" type="submit">Reset</button>
