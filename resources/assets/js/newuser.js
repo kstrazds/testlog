@@ -11,18 +11,29 @@ $(function (){
           password: $('#inputPassword').val()
       }
     }).done(function (data) {
-      $('.messages-container').css('display', 'none');
-      $('.messages-list').empty();
+      var messagesList = $('.messages-list'),
+          messagesContainer = $('.messages-container');
+
+      messagesContainer.hide();
+      messagesList.empty();
+
       var dataObj = $.parseJSON(data);
 
       if (dataObj.length) {
-        $('.messages-container').css('display', 'block');
+        messagesContainer.show();
 
         dataObj.forEach(function(element) {
           var temp = '<li class="message">' + element + '</li>';
           
-          $('.messages-list').prepend(temp);
+          messagesList.prepend(temp);
+
+          var messageField = $('.message');
+
           $('.signup-form input').val('');
+
+          if (messageField.text() == 'Registration successful!') {
+            messageField.css('color', '#008000');
+          }
         });
       }
       

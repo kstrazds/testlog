@@ -16,11 +16,30 @@ body {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.heading-label h3 {
-  letter-spacing: 1;
-  padding: 16px 0;
-  font-weight: 300;
-  margin: 0; }
+.heading-label {
+  position: relative; }
+  .heading-label::after {
+    content: url("../images/magebit-logo.png");
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 16px;
+    z-index: 20; }
+  .heading-label h3 {
+    letter-spacing: 1;
+    padding: 16px 0;
+    font-weight: 300;
+    margin: 0 0 16px 0; }
+    .heading-label h3::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 48px;
+      border-bottom: 2px solid #49abfe;
+      height: 2px;
+      bottom: 0; }
 
 .container {
   display: block;
@@ -36,8 +55,8 @@ body {
     height: 100%;
     background-color: rgba(27, 35, 71, 0.9); }
     .container .forms-wrapper .form {
-      position: absolute;
-      margin: 0px 24px;
+      position: relative;
+      margin: 0 24px;
       height: 320px;
       background: white;
       top: -24px;
@@ -46,13 +65,26 @@ body {
       box-shadow: -24px 0px 0px -12px rgba(73, 171, 254, 0.2); }
       .container .forms-wrapper .form.signup {
         display: none; }
+      .container .forms-wrapper .form .hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+        position: absolute;
+        z-index: -1; }
+      .container .forms-wrapper .form .visible {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.5s;
+        position: absolute;
+        z-index: 1; }
       .container .forms-wrapper .form input:-webkit-autofill,
       .container .forms-wrapper .form input:-webkit-autofill:hover,
       .container .forms-wrapper .form input:-webkit-autofill:focus,
       .container .forms-wrapper .form input:-webkit-autofill:active {
         box-shadow: 0 0 0 30px #fff inset; }
       .container .forms-wrapper .form .input-data {
-        margin-bottom: 16px; }
+        margin-bottom: 16px;
+        position: relative; }
         .container .forms-wrapper .form .input-data label {
           font-size: 14px;
           display: block;
@@ -67,6 +99,14 @@ body {
           outline: 0;
           padding: 8px 0;
           font-size: 14px; }
+        .container .forms-wrapper .form .input-data.email::after, .container .forms-wrapper .form .input-data.password::after, .container .forms-wrapper .form .input-data.name::after {
+          content: url("../images/ic-lock.png");
+          display: block;
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          right: 0;
+          top: 16px; }
 
 .messages-container {
   background: #fff;
@@ -89,12 +129,14 @@ body {
   border-radius: 24px;
   padding: 8px 0;
   color: #fff;
-  font-weight: 600; }
+  font-weight: 600;
+  letter-spacing: 1;
+  outline: 0; }
 
 .btn.blue {
   background-color: #49abfe; }
 
-.btn.forgot, .btn.signup-mobile, .btn.login-mobile {
+.btn.forgot, .btn.signup-mobile, .btn.login-mobile, .btn.back-login {
   display: inline-block;
   text-align: center;
   margin: 16px 0;
@@ -104,7 +146,7 @@ body {
   font-size: 12px;
   float: right; }
 
-.btn.login-mobile {
+.btn.login-mobile, .btn.back-login {
   display: block;
   float: inherit; }
 

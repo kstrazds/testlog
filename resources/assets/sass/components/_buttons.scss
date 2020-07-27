@@ -12,6 +12,8 @@
     padding: 8px 0;
     color: $color--white;
     font-weight: $font-weight--normal;
+    letter-spacing: 1;
+    outline: 0;
   }
 
   &.blue {
@@ -20,7 +22,8 @@
 
   &.forgot,
   &.signup-mobile,
-  &.login-mobile {
+  &.login-mobile,
+  &.back-login {
     display: inline-block;
     text-align: center;
     margin: 16px 0;
@@ -31,7 +34,8 @@
     float: right;
   }
 
-  &.login-mobile {
+  &.login-mobile,
+  &.back-login {
     display: block;
     float: inherit;
   }
