@@ -41,5 +41,11 @@ gulp minicss
 Used plain PHP and tried to stick with Model/View/Controller pattern as the Router is created like for single page app.
 Most of the validation comes from the backend, but only on Sign Up used error messages where i used ajax in js. 
 
+## XAMPP
+Used xampp for the Apache and MySQL, PHP 7.2.31.
+
+## Git, Visual Studio Code
+Used git bash terminal and the Visual Studio Code editor. Tried to add commits and do regular pushing for visibility.
+
 ## Summary
 Eventually, tried to minify and optimize everything. Tried to structurize the files and make the code clean to be more dev friendly for better readability.
