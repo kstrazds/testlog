@@ -4,8 +4,6 @@
   <div class="main">
     <div class="container">
       <div class="forms-wrapper">
-
-
         <div class="form forgot">
           <div class="inner-element">
             <div class="form-heading-container">
@@ -13,7 +11,6 @@
                 <h3 class="title">Reset</h3>
               </div>
             </div>
-
             <div class="message-box-reset"></div>
             <form method="post" action="/testlog/resetPassword" class="password-reset-form">
               <?php 
@@ -31,23 +28,10 @@
               <button class="btn blue" id="send-reset" type="submit">Reset</button>
               <a class="btn back-login" id="back-login" href="/testlog/">Back to login</a>
             </form>
-
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

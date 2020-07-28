@@ -1,4 +1,4 @@
-$(function (){
+$(function () {
   $('body').on('click', '#signup-btn', function (e) {
     e.preventDefault();
 
@@ -47,9 +47,7 @@ $(function (){
       type: "POST",
       url: "destroySession",
       data: {}
-    }).done(function () {
-      console.log('Logged out!');
-    }).fail(function () {
+    }).done(function () {}).fail(function () {
       alert('Something went wrong, please try again later.');
     });
   });
@@ -65,6 +63,7 @@ $(function (){
       $('.reset-password').css('display', 'none');
 
       var approved = 'Please check your email!';
+      
       $('.message-box').append(approved);
     }).fail(function () {
       alert('Something went wrong, please try again later.');

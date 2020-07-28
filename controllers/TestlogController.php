@@ -104,5 +104,16 @@ class TestlogController extends Controllers
       exit;
     }
   }
+
+  public function updateProfileAction()
+  {
+    $user = Auth::getUser();
+
+    if ($user->updateUserProfile($_POST)) {
+      $this->view->render('views/userpanel.php');
+    }
+
+    exit;
+  }
 }
 ?>

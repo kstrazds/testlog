@@ -1,5 +1,4 @@
 $(function () {
-
   function showForm(element) {
     var loginForm = $('.form .inner-element.login'),
         signUpForm = $('.form .inner-element.signup');
@@ -21,15 +20,11 @@ $(function () {
     showForm(this);
   });
 
-  $(document).on('click', '.btn.lead', function(){
-    
-  })
-
   $(document).on('focus', '.input-data input', function(e) {
     if ($(this).data('clicked', true)) {
       $(this).parent('.input-data').addClass('active');
     }
-  }).on('focusout', '.input-data input', function(){
+  }).on('focusout', '.input-data input', function() {
     $('.input-data').removeClass('active');
   });
 

@@ -18,7 +18,7 @@ class NewUser extends DatabaseConnection
   {
     $this->validateData();
 
-    if (empty($this->messages)){
+    if (empty($this->messages)) {
       $password_hash = password_hash($this->password, PASSWORD_DEFAULT);
 
       $sql = 'INSERT INTO users (name, email, password_hash) VALUES (:name, :email, :password_hash)';
@@ -54,9 +54,11 @@ class NewUser extends DatabaseConnection
     if (filter_var($this->email, FILTER_VALIDATE_EMAIL) === false) {
       $this->messages[] = 'Invalid email!';
     }
-
-    if (strlen($this->password) < 6) {
-      $this->messages[] = 'Please enter atleast 6 character for the password!';
+  
+    if (isset($this->password)) {
+      if (strlen($this->password) < 6) {
+        $this->messages[] = 'Please enter atleast 6 character for the password!';
+      }
     }
   }
 
@@ -185,6 +187,63 @@ class NewUser extends DatabaseConnection
     $stmt->bindValue(':password_hash', $password_hash, PDO::PARAM_STR);
 
     return $stmt->execute();
+  }
+
+  public function updateUserProfile($data)
+  {
+    $this->name = $data['name'];
+    $this->email = $data['email'];
+
+    if ($data['age'] != '') {
+      $this->age = $data['age'];
+    } else {
+      $this->age = null;
+    }
+
+    // As the password update for logged in users are optional, empty field won't update password.
+    if ($data['password'] != '') {
+      $this->password = $data['password'];
+    }
+
+    $this->validateData();
+
+    if (empty($this->errors)) {
+      $sql = 'UPDATE users 
+              SET name = :name';
+      
+      if ($data['age'] != '') {
+        $sql .= ', age = :age';
+      }
+
+      $sql .= ',email = :email';
+
+      if (isset($this->password)) {
+        $sql .= ', password_hash = :password_hash';
+      }
+      
+      $sql .= "\nWHERE id = :id";
+
+      $db = static::getDB();
+      $stmt = $db->prepare($sql);
+
+      $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
+
+      if (isset($this->age)) {
+        $stmt->bindValue(':age', $this->age, PDO::PARAM_STR);
+      }
+      
+      $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
+      $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+
+      if (isset($this->password)) {
+        $password_hash = password_hash($this->password, PASSWORD_DEFAULT);
+        $stmt->bindValue(':password_hash', $password_hash, PDO::PARAM_STR);
+      }
+      
+      return $stmt->execute();
+    }
+
+    return false;
   }
 }
 ?>

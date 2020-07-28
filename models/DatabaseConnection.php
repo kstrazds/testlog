@@ -18,3 +18,4 @@ abstract class DatabaseConnection
         return $db;
     }
 }
+?>

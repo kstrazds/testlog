@@ -59,6 +59,11 @@
     float: right;
   }
 
+  &.userlogout {
+    float: inherit;
+    display: block;
+  }
+
   &.login-mobile,
   &.back-login {
     display: block;
@@ -83,6 +88,11 @@
       padding: 16px 0;
       width: 140px;
       transition: 0.3s;
+    }
+
+    &.userlogout {
+      float: right;
+      display: inline-block;
     }
 
     &.orange:hover {

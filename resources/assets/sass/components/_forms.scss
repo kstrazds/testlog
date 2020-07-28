@@ -12,6 +12,10 @@
     z-index: 20;
   }
 
+  &.userprofile::after {
+    display: none;
+  }
+
   h3 {
     letter-spacing: 1;
     padding: 16px 0;
@@ -27,6 +31,10 @@
       height: 2px;
       bottom: 0;
     }
+
+    .user-name {
+      text-transform: capitalize;
+    }
   }
 }
 
@@ -39,6 +47,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
+  &.userprofile {
+    height: 400px;
+  }
+
   .forms-wrapper {
     position: relative;
     width: 100%;
@@ -49,11 +61,15 @@
       position: relative;
       margin: 0 24px;
       height: 320px;
-      background: white;
+      background: $color--white;
       top: -24px;
       background-color: $color--white;
       padding: 24px;
-      box-shadow: -24px 0px 0px -12px rgba(73,171,254,0.2);
+      box-shadow: -24px 0 0 -12px rgba(73,171,254,0.2);
+
+      &.userprofile {
+        height: 400px;
+      }
 
       &.signup {
         display: none;
@@ -171,6 +187,10 @@
     width: 900px;
     height: 400px;
 
+    &.userprofile {
+      height: 494px;
+    }
+
     .signup-section-info,
     .login-section-info {
       width: 50%;
@@ -244,13 +264,17 @@
         float: inherit;
         margin: 0 auto;
       }
+
+      &.userprofile {
+        height: 350px;
+      }
     }
   }
 
   .heading-label h3 {
     font-size: 24px;
     margin: 0 0 24px 0;
-    padding: 0 0 24px 0;
+    padding: 0 48px 24px 0;
     color: $color--gray;
   }
 

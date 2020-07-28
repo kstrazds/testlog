@@ -25,3 +25,4 @@ class Token
     return hash_hmac('sha256', $this->token, 'k0bFEwHMf7dNWynVsZg0Rj8Dgc1oLmPG');
   }
 }
+?>
